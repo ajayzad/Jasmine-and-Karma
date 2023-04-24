@@ -33,3 +33,26 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('jasmine-karma app is running!');
   });
 });
+
+describe('Hello world', () => {
+
+  let expected = "";
+
+  beforeEach(() => {
+    expected = "Hello world!";
+  });
+
+  afterEach(() => {
+    expected = "";
+  });
+
+  it('says hello', () => {
+    expect(helloWorld())
+        .toEqual(expected);
+  });
+});
+
+function helloWorld(): string {
+  return 'Hello world!';
+}
+
